@@ -18,12 +18,13 @@ on:
 
 jobs:
   build:
-  
+    name: Build and Push
+
+    runs-on: windows-latest
+
     env:
       BUILD_CONFIG: 'Release'
       PROJECT_PATH: './src/AppActions.Icons.Maui/AppActions.Icons.Maui.csproj'
-
-    runs-on: windows-latest
 
     steps:
     - name: Checkout
