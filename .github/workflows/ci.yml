@@ -57,8 +57,8 @@ jobs:
     - name: Build Package
       run: dotnet build $env:PROJECT_PATH --configuration $env:BUILD_CONFIG -p:Version=$env:BUILD_VERSION --no-restore
 
-    - name: Run tests
-      run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
+    # - name: Run tests
+    #   run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
       
     - name: Upload Package to Nuget
       if: startsWith(github.ref, 'refs/heads/release')
