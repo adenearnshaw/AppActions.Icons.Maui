@@ -50,7 +50,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\AppActions.Icons.Maui\AppActions.Icons.Maui.csproj" />
+	  <ProjectReference Include="..\..\src\AppActions.Icons.Maui\AppActions.Icons.Maui.csproj" />
 	</ItemGroup>
 
 </Project>

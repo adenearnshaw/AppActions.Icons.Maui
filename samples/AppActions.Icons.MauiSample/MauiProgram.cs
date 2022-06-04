@@ -20,7 +20,7 @@ public static class MauiProgram
 					.UseAppActionIcons()
 					.AddAppAction("home_sc", "Home", icon: AppActionIcon.Home)
 					.AddAppAction("cloud_sc", "Online", icon: AppActionIcon.Cloud)
-					.AddAppAction("trash_sc", "Trash", icon: new SystemSymbol("trash.slash.square"))
+					.AddAppAction("trash_sc", "Trash", icon: new SystemSymbol(new PlatformString(AppActionIcon.Prohibit, ios: "trash.slash.square")))
 					.OnAppAction(App.HandleAppActions);
             });
 
