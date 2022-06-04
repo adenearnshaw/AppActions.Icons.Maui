@@ -7,6 +7,7 @@ on:
   push:
     branches: 
     - main
+    - feature/*
     paths-ignore:
       - '**/*.md'
       - '**/*.gitignore'
@@ -20,12 +21,15 @@ jobs:
   
     env:
       BUILD_CONFIG: 'Release'
-      SOLUTION: './src/AppActions.Icons.Maui/AppActions.Icons.Maui.csproj'
+      PROJECT_PATH: './src/AppActions.Icons.Maui/AppActions.Icons.Maui.csproj'
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     
     - name: Get Build Version
       run: |
@@ -35,23 +39,26 @@ jobs:
         echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       shell: pwsh
 
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Install MAUI Workload
+      run: dotent workload install maui
+
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
-    - name: Restore dependencies
-      run: nuget restore $SOLUTION
+    - name: NuGet Restore
+      run: dotnet restore $PROJECT_PATH
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.x
-
-    - name: Build
-      run: dotnet build $SOLUTION --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
+    - name: Build Package
+      run: dotnet build $PROJECT_PATH --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
 
     - name: Run tests
       run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
       
-    - name: Publish
+    - name: Upload Package to Nuget
       if: startsWith(github.ref, 'refs/heads/release')
       run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
