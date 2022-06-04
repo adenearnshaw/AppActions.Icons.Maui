@@ -1,22 +1,41 @@
-﻿using System;
-namespace Maui.AppActions.Icons
+﻿namespace AppActions.Icons.Maui;
+
+/// <summary>
+/// A System Symbol
+/// </summary>
+public class SystemSymbol
 {
-	public class SystemSymbol
-	{
-		private readonly string _symbolName;
+    private readonly string _symbolName;
 
-		public SystemSymbol(string symbolName)
-		{
-#if __IOS__
-			_symbolName = $"aasfs_{symbolName}";
+    /// <summary>
+    /// Denotes string value is a System Symbol. In iOS this will resolve an SF Symbol.
+    /// </summary>
+    /// <param name="symbolName">SF Symbol name, on non-iOS platforms periods will be replaced with underscores</param>
+    public SystemSymbol(string symbolName)
+    {
+#if IOS || MACCATALYST
+
+        _symbolName = $"{IconPrefix_SFSymbol}{symbolName}";
 #else
-			_symbolName = symbolName.Replace('.', '_');
+		_symbolName = symbolName.Replace('.', '_');
 #endif
-		}
+    }
 
-		public static implicit operator string(SystemSymbol s) => s._symbolName;
-		public static explicit operator SystemSymbol(string b) => new SystemSymbol(b);
+    /// <summary>
+    /// Implicitly operator of <see cref="SystemSymbol"/> to <see cref="String"/>
+    /// </summary>
+    /// <param name="s"><see cref="SystemSymbol"/> value</param>
+    public static implicit operator string(SystemSymbol s) => s._symbolName;
 
-		public override string ToString() => $"{_symbolName}";
-	}
+    /// <summary>
+    /// Explicit operator of <see cref="SystemSymbol"/>
+    /// </summary>
+    /// <param name="b"><see cref="SystemSymbol"/> value</param>
+    public static explicit operator SystemSymbol(string b) => new SystemSymbol(b);
+
+    /// <summary>
+    /// Output the <see cref="SystemSymbol"/> value to string
+    /// </summary>
+    /// <returns><see cref="SystemSymbol"/> value</returns>
+    public override string ToString() => $"{_symbolName}";
 }

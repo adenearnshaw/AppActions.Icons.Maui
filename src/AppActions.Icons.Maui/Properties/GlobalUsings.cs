@@ -1,0 +1,1 @@
+﻿global using static AppActions.Icons.Maui.Constants;

@@ -1,6 +1,6 @@
-﻿using Maui.AppActions.Icons;
+﻿using AppActions.Icons.Maui;
 
-namespace AppShortcuts.Maui.Icons;
+namespace AppActions.Icons.MauiSample;
 
 public partial class App : Application
 {

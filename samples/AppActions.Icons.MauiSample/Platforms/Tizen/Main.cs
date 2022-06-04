@@ -2,7 +2,7 @@ using System;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace AppShortcuts.Maui.Icons;
+namespace AppActions.Icons.MauiSample;
 
 class Program : MauiApplication
 {

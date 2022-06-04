@@ -2,12 +2,11 @@
 using Foundation;
 using UIKit;
 
-namespace Maui.AppActions.Icons.Platforms
+namespace AppActions.Icons.Maui.Platforms
 {
     static class AppActionsExtensions
     {
-        internal const string UIKitIconTypePrefix = "aauik_";
-        internal const string SFSymbolIconTypePrefix = "aasfs_";
+
         private const string IconPropertyName = "Icon";
 
         internal static AppAction ToAppAction(this UIApplicationShortcutItem shortcutItem)
@@ -41,15 +40,15 @@ namespace Maui.AppActions.Icons.Platforms
                 keys.Add((NSString)"icon");
                 values.Add((NSString)iconValue);
 
-                if (iconValue.StartsWith(UIKitIconTypePrefix))
+                if (iconValue.StartsWith(IconPrefix_UIAppShortcutIcon))
                 {
-                    var isIconKnownType = Enum.TryParse(iconValue.Substring(UIKitIconTypePrefix.Length), out UIApplicationShortcutIconType type);
+                    var isIconKnownType = Enum.TryParse(iconValue.Substring(IconPrefix_UIAppShortcutIcon.Length), out UIApplicationShortcutIconType type);
                     if (isIconKnownType)
                         icon = UIApplicationShortcutIcon.FromType(type);
                 }
-                else if (iconValue.StartsWith(SFSymbolIconTypePrefix))
+                else if (iconValue.StartsWith(IconPrefix_SFSymbol))
                 {
-                    icon = UIApplicationShortcutIcon.FromSystemImageName(iconValue.Substring(SFSymbolIconTypePrefix.Length));
+                    icon = UIApplicationShortcutIcon.FromSystemImageName(iconValue.Substring(IconPrefix_SFSymbol.Length));
                 }
 
                 if (icon is null && iconValue is not null)

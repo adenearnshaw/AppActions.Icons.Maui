@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace AppShortcuts.Maui.Icons;
+namespace AppActions.Icons.MauiSample;
 
 [Application]
 public class MainApplication : MauiApplication

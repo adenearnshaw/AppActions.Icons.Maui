@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace AppShortcuts.Maui.Icons;
+namespace AppActions.Icons.MauiSample;
 
 public class Program
 {

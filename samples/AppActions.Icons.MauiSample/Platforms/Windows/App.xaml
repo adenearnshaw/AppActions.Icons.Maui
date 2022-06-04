@@ -1,8 +1,8 @@
 ﻿<maui:MauiWinUIApplication
-    x:Class="AppShortcuts.Maui.Icons.WinUI.App"
+    x:Class="AppActions.Icons.MauiSample.WinUI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:maui="using:Microsoft.Maui"
-    xmlns:local="using:AppShortcuts.Maui.Icons.WinUI">
+    xmlns:local="using:AppActions.Icons.MauiSample.WinUI">
 
 </maui:MauiWinUIApplication>

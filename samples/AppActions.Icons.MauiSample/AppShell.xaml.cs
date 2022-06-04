@@ -1,4 +1,4 @@
-﻿namespace AppShortcuts.Maui.Icons;
+﻿namespace AppActions.Icons.MauiSample;
 
 public partial class AppShell : Shell
 {

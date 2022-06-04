@@ -2,7 +2,7 @@
 using Android.Content.PM;
 using Android.Content;
 
-namespace AppShortcuts.Maui.Icons;
+namespace AppActions.Icons.MauiSample;
 
 [Activity(Theme = "@style/Maui.SplashTheme", 
           MainLauncher = true, 

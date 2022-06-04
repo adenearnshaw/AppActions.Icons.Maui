@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace AppShortcuts.Maui.Icons;
+namespace AppActions.Icons.MauiSample;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
