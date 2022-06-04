@@ -55,7 +55,7 @@ jobs:
       run: dotnet restore $env:PROJECT_PATH
 
     - name: Build Package
-      run: dotnet build $env:PROJECT_PATH --configuration $env:BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
+      run: dotnet build $env:PROJECT_PATH --configuration $env:BUILD_CONFIG -p:Version=$env:BUILD_VERSION --no-restore
 
     - name: Run tests
       run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
