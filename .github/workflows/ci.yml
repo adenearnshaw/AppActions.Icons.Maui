@@ -52,10 +52,10 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
 
     - name: NuGet Restore
-      run: dotnet restore $PROJECT_PATH
+      run: dotnet restore $env:PROJECT_PATH
 
     - name: Build Package
-      run: dotnet build $PROJECT_PATH --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
+      run: dotnet build $env:PROJECT_PATH --configuration $env:BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
 
     - name: Run tests
       run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
