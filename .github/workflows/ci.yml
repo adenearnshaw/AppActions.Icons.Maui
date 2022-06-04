@@ -46,7 +46,7 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Install MAUI Workload
-      run: dotent workload install maui
+      run: dotnet workload install maui
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
