@@ -24,7 +24,7 @@ jobs:
 
     env:
       BUILD_CONFIG: 'Release'
-      PROJECT_PATH: './src/AppActions.Icons.Maui/AppActions.Icons.Maui.csproj'
+      PROJECT_PATH: '.\src\AppActions.Icons.Maui\AppActions.Icons.Maui.csproj'
 
     steps:
     - name: Checkout
