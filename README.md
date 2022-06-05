@@ -52,9 +52,7 @@ Declare an SF Symbol for iOS and use your own custom icon on other platforms
 1. Replace the icon property value with `SystemSymbol()` passing in the SF Symbol name.
 
     ```csharp
-    ...
     .AddAppAction("record_sc", "Record", icon: new SystemSymbol("mic.circle.fill"))
-    ...
     ```
 
     > On non-iOS platforms the periods (.) in the name are replaced with underscores (_). So `mic.circle.fill` will need a custom Android/Windows image called `mic_circle_fill`.
@@ -67,9 +65,7 @@ Declare an SF Symbol for iOS and use one of the other provided icons for other p
 1. Use the `PlatformString()` to set specific icons for each platform within `SystemSymbol`
 
     ```csharp
-    ...
     .AddAppAction("pause_sc", "Pause", icon: new SystemSymbol(new PlatformString(AppActionIcon.Prohibit, ios: "pause.circle.fill")))
-    ...
     ```
 
     > This will use the default Pause icon on Window & Android. On iOS, this will use the SF Symbol of a filled circle with an pause icon in it.
@@ -81,9 +77,7 @@ The `PlatformString` can be used independently of `SystemSymbol` to be able to d
 1. Use the `PlatformString()` to set specific icons for each platform
 
     ```csharp
-    ...
     .AddAppAction("stop_sc", "Stop", icon: new PlatformString("quicklaunch_stop", android: "ic_app_action_stop", ios: "quickaction_stop"))
-    ...
     ```
 
 ### Customise the icon colors on Android
