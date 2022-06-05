@@ -105,6 +105,55 @@ Each Android icon uses a VectorDrawable and as such, the colors of the icon and 
 
     ![Example of custom icon color](/assets/CustomIconColorExample.png)
 
+## Creating a custom icon
+
+Each platform has different specifications for the icons needed for shortcuts.
+
+### Android
+
+|||
+|---|---|
+| Width | 48px |
+| Height | 48px |
+
+*Along with PNGs and JPGs, Android also supports VectorDrawables. A sample icon can be found [here](resources/SampleIcon.xml)*
+
+- [Android App Shortcuts design guidelines](https://commondatastorage.googleapis.com/androiddevelopers/shareables/design/app-shortcuts-design-guidelines.pdf)  
+- [Material icons](https://material.io/icons/)  
+
+### iOS
+
+|||
+|---|---|
+| Width | 35px |
+| Height | 35px |
+
+Images should be added to the AssetCatalog with the `Render As:` option set to `Template Image`
+
+![ImageSet with Render Mode set to Template Image](assets/RenderAsExample.png)
+
+- [Human Interface Guidelines - Quick Actions](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/system-icons#home-screen-quick-action-icons)
+
+### Windows
+
+|||
+|---|---|
+| Width | 44px |
+| Height | 44px |
+
+- [UWP icon specifications](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/app-assets)  
+- [UWP icons](https://docs.microsoft.com/en-us/windows/uwp/design/style/segoe-ui-symbol-font)
+
+## Troubleshooting
+
+### Opening links in the same Android instance each time
+
+If the app is backgrounded and a shortcut is tapped, your app may relaunch and re-initialized the App from scratch, wiping any existing navigation backstack. This is caused by the MainActivity recreating itself when coming in via the IntentFilter. To re-launch the app in the same instance that was backgrounded add the following property to the `Activity` attribute in your **MainActivity**
+
+```csharp
+LaunchMode = LaunchMode.SingleTask
+```
+
 ## Resources
 
 - MAUI AppActions Docs: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/maui/platform-integration/appmodel/app-actions?tabs=android)

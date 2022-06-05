@@ -1,30 +1,27 @@
-﻿using AppActions.Icons.Maui;
-
-namespace AppActions.Icons.MauiSample;
+﻿namespace AppActions.Icons.MauiSample;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
-		MainPage = new AppShell();
-	}
+    public App()
+    {
+        InitializeComponent();
+        MainPage = new AppShell();
+    }
 
     public static void HandleAppActions(AppAction appAction)
     {
         App.Current.Dispatcher.Dispatch(async () =>
         {
-            var page = appAction.Id switch
+            var action = appAction.Id switch
             {
-                "home_sc" => new MainPage(),
-                _ => default(Page)
+                "home_sc" => "Home",
+                "record_sc" => "Record",
+                "pause_sc" => "Pause",
+                "stop_sc" => "Stop",
+                _ => "None"
             };
 
-            if (page != null)
-            {
-                await Shell.Current.Navigation.PopToRootAsync();
-                await Shell.Current.Navigation.PushAsync(page);
-            }
+            await Shell.Current.GoToAsync($"../{nameof(MainPage)}?action={action}");
         });
     }
 }
