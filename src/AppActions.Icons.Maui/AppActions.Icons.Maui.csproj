@@ -40,6 +40,7 @@
     <Title>AppActions.Icons.Maui</Title>
     <Description>A .NET MAUI library that provides some default icons for AppActions without having to create your own. Also supports SF Symbols on iOS</Description>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <Version>0.1.0</Version>
     <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
@@ -65,6 +66,7 @@
 
   <ItemGroup>
 	  <None Include="..\..\assets\package_icon.png" PackagePath="icon.png" Pack="true" />
+    <None Include="..\..\assets\NugetReadme.md" PackagePath="README.md" Pack="true" />
   </ItemGroup>
 
   <ItemGroup>
