@@ -52,7 +52,7 @@ namespace AppActions.Icons.Maui.Platforms
                 }
 
                 if (icon is null && iconValue is not null)
-                    UIApplicationShortcutIcon.FromTemplateImageName(iconValue);
+                    icon = UIApplicationShortcutIcon.FromTemplateImageName(iconValue);
             }
 
             return new UIApplicationShortcutItem(
