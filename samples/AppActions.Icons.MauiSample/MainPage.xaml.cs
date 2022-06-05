@@ -3,21 +3,21 @@
 [QueryProperty(nameof(LaunchAction), "action")]
 public partial class MainPage : ContentPage
 {
-	private string _launchAction = "None";
-	public string LaunchAction
+    private string _launchAction = "None";
+    public string LaunchAction
     {
-		get => _launchAction;
-		set
-		{ 
+        get => _launchAction;
+        set
+        { 
             _launchAction = value;
-			OnPropertyChanged();
+            OnPropertyChanged();
         }
     }
 
-	public MainPage()
-	{
-		InitializeComponent();
-		BindingContext = this;
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+        BindingContext = this;
+    }
 }
 

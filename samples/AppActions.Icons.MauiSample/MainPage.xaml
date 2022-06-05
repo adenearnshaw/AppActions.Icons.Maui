@@ -4,7 +4,7 @@
              x:Class="AppActions.Icons.MauiSample.MainPage"
              xmlns:local="using:AppActions.Icons.MauiSample"
              x:DataType="local:MainPage">
-			 
+             
     <ScrollView>
         <VerticalStackLayout 
             Spacing="25" 
