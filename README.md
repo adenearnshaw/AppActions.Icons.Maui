@@ -2,9 +2,10 @@
 
 A .NET MAUI library that provides some default icons for AppActions without having to create your own.
 
-|||||
-|---|---|---|---|
-| Build | [![CI](https://github.com/adenearnshaw/AppActions.Icons.Maui/actions/workflows/ci.yml/badge.svg)](https://github.com/adenearnshaw/AppActions.Icons.Maui/actions/workflows/ci.yml) | NuGet | [![NuGet](https://img.shields.io/nuget/v/AppActions.Icons.Maui.svg?label=NuGet)](https://www.nuget.org/packages/AppActions.Icons.Maui/) |
+|Latest Version||
+|---|---|
+| Build | [![CI](https://github.com/adenearnshaw/AppActions.Icons.Maui/actions/workflows/ci.yml/badge.svg)](https://github.com/adenearnshaw/AppActions.Icons.Maui/actions/workflows/ci.yml) |
+| NuGet | [![NuGet](https://img.shields.io/nuget/v/AppActions.Icons.Maui.svg?label=NuGet)](https://www.nuget.org/packages/AppActions.Icons.Maui/) |
 
 ## Features
 
@@ -111,7 +112,7 @@ Each platform has different specifications for the icons needed for shortcuts.
 
 ### Android
 
-|||
+|Android Icon Dimensions||
 |---|---|
 | Width | 48px |
 | Height | 48px |
@@ -123,7 +124,7 @@ Each platform has different specifications for the icons needed for shortcuts.
 
 ### iOS
 
-|||
+|iOS Icon Dimensions||
 |---|---|
 | Width | 35px |
 | Height | 35px |
@@ -136,7 +137,7 @@ Images should be added to the AssetCatalog with the `Render As:` option set to `
 
 ### Windows
 
-|||
+|Windows Icon Dimensions||
 |---|---|
 | Width | 44px |
 | Height | 44px |
