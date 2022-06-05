@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#2B0B98</color>
     <color name="colorAccent">#2B0B98</color>
 
-	<color name="appActionBackground">#212121</color>
-	<color name="appActionForeground">#d32f2f</color>
+	<color name="appActionBackground">#E6DFFC</color>
+	<color name="appActionForeground">#512BD4</color>
 </resources>

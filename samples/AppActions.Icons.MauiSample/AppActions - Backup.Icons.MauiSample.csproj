@@ -53,15 +53,11 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
-	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
-		<MauiImage Include="Platforms\iOS\Assets\quickaction_stop.svg" Resize="true" />
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\AppActions.Icons.Maui\AppActions.Icons.Maui.csproj" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<MauiImage Include="Platforms\Windows\Assets\quicklaunch_stop.png" Resize="false" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\src\AppActions.Icons.Maui\AppActions.Icons.Maui.csproj" />
 	</ItemGroup>
 </Project>

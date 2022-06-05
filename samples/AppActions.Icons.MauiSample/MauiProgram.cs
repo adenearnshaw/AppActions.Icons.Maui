@@ -19,8 +19,9 @@ public static class MauiProgram
 				essentials
 					.UseAppActionIcons()
 					.AddAppAction("home_sc", "Home", icon: AppActionIcon.Home)
-					.AddAppAction("cloud_sc", "Online", icon: AppActionIcon.Cloud)
-					.AddAppAction("trash_sc", "Trash", icon: new SystemSymbol(new PlatformString(AppActionIcon.Prohibit, ios: "trash.slash.square")))
+					.AddAppAction("record_sc", "Record", icon: new SystemSymbol("mic.circle.fill"))
+					.AddAppAction("pause_sc", "Pause", icon: new SystemSymbol(new PlatformString(AppActionIcon.Pause, ios: "pause.circle.fill")))
+					.AddAppAction("stop_sc", "Stop", icon: new PlatformString("quicklaunch_stop", android: "ic_app_action_stop", ios: "quickaction_stop"))
 					.OnAppAction(App.HandleAppActions);
             });
 
