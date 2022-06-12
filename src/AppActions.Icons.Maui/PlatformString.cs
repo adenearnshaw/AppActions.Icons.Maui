@@ -3,7 +3,7 @@
 /// <summary>
 /// String container to hold platform independent values
 /// </summary>
-public class PlatformString
+public record struct PlatformString
 {
     private readonly string _stringValue;
 
